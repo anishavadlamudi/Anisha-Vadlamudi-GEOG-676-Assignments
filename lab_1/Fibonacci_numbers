@@ -3,14 +3,18 @@
 n = int(input("Please enter a positive integer, this will be the # of Fibonacci number generated. Thank you."))
 x = 0
 y = 1
-Count = 0
+count = 2
 r = 0
+sequence = []
+sequence.append(x)
+sequence.append(y)
 
-print(x, y)
-
-while Count != n:
+while count != n:
     r = x + y
     x = y
     y = r
-    Count += 1
-    print(r)
+    sequence.append(r)
+    count += 1
+    
+        
+print(sequence)
