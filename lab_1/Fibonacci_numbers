@@ -1,5 +1,6 @@
 # Anisha Vadlamudi Fibonacci Numbers exercise and notes
 # Date: 01/20/2026
+
 n = int(input("Please enter a positive integer, this will be the # of Fibonacci number generated. Thank you."))
 x = 0
 y = 1
@@ -15,6 +16,4 @@ while count != n:
     y = r
     sequence.append(r)
     count += 1
-    
-        
 print(sequence)
