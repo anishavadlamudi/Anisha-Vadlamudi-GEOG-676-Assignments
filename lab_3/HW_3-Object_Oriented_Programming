@@ -1,0 +1,29 @@
+
+
+
+
+#tamu = "Texas A&M University"
+
+#tokens = tamu.split(" ") # We split our string on whitespace
+#print(len(tokens)) # Prints 3 since we have three components
+#print(tokens) # Prints ["Texas", "A&M", "University"]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#class Rectangle(Shape):
+#    def __init__(self, l, w):
+#        self.l = l
+#        self.w = w
+#    def getArea(self):
+#        return self.l * self.w
