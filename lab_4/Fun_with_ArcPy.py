@@ -1,12 +1,12 @@
 import arcpy
 
-arcpy.env.workspace = r'C:\Users\Anish\Documents\GitHub\Anisha-Vadlamudi-GEOG-676-Assignments\lab_4\codes_env'
-folder_path = r'C:\Users\Anish\Documents\GitHub\Anisha-Vadlamudi-GEOG-676-Assignments\lab_4'
+arcpy.env.workspace = r'lab_4\codes_env'
+folder_path = r'lab_4'
 gdb_name = 'Test.gdb'
 gdb_path = folder_path + '\\' + gdb_name
 arcpy.CreateFileGDB_management(folder_path, gdb_name)
 
-csv_path = r'C:\Users\Anish\Documents\GitHub\Anisha-Vadlamudi-GEOG-676-Assignments\lab_4\garages.csv'
+csv_path = r'lab_4\garages.csv'
 garage_layer_name = 'Garage_Points'
 garages = arcpy.MakeXYEventLayer_management(csv_path, 'X', 'Y', garage_layer_name)
 
@@ -15,7 +15,7 @@ arcpy.FeatureClassToGeodatabase_conversion(input_layer, gdb_path)
 garage_points = gdb_path + '\\' + garage_layer_name
 
 #open campus gdb, copy building feature to our gdb
-campus = r'C:\Users\Anish\Documents\GitHub\Anisha-Vadlamudi-GEOG-676-Assignments\lab_4\Campus.gdb'
+campus = r'lab_4\Campus.gdb'
 buildings_campus = campus + '\Structures'
 buildings = gbd_path = '\\' + 'Buildings'
 
@@ -31,4 +31,4 @@ garageBuffered = arcpy.Buffer_analysis(gdb_path + '\Garage_Points_reprojected', 
 #Intersect our buffer with the buildings
 arcpy.Intersect_analysis([garageBuffered, buildings], gdb_path + '\Garage_Building_Intersection', 'ALL')
 
-arcpy.TableToTable_conversion(gdb_path + '\Garage_Building_Intersection.dbf', 'C:\Users\Anish\Documents\GitHub\Anisha-Vadlamudi-GEOG-676-Assignments\lab_4', 'nearbyBuildings.csv')
+arcpy.TableToTable_conversion(gdb_path + '\Garage_Building_Intersection.dbf', 'lab_4', 'nearbyBuildings.csv')
