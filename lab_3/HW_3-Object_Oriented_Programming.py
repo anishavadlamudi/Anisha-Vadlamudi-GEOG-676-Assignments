@@ -1,71 +1,45 @@
 import re
+#create classes 
+class Shape():
+    def __init__(self):
+        pass
 
+class Rectangle(Shape):
+    def __init__(self, l, w):        
+        self.length = l
+        self.width = w
+    def getArea(self):
+        return self.length * self.width
+    
 class Circle(Shape):
     def __init__(self, r):
-        self.r = r
+        self.radius = r
     def getArea(self):
-        return self.r * self.r * 3.14
+        return 3.14 * self.radius ** 2
 
 class Triangle(Shape):
     def __init__(self, b, h):
-        self.b = b
-        self.h = h
+        self.base = b
+        self.height = h
     def getArea(self):
-        return (self.b * self.h) / 2
-
-class Rectangle(Shape):
-    def __init__(self, l, w):
-        self.l = l 
-        self.w = w
-    def getArea(self):
-         return self.l * self.w
-
-
-def file_or():
-    try:
-        file = open("lab_3\shape.txt", "r")
-        line = file.readline()
-        file.close()
-
-    except IOError:
-        print("An error has occurred opening the file.")
-    return line
-
-
-def split_readline(line):
+        return 0.5 * self.base * self.height
     
-    parts = line.split(" ")
-    print (len(parts))
-    print (parts)
-    
-    return parts 
+# read txt file
+file = open(r'C:\Users\Anish\Documents\GitHub\Anisha-Vadlamudi-GEOG-676-Assignments\lab_3\shape.txt', 'r')   
+lines = file.readlines()
+file.close()
 
-def read_parts(parts):
-
-    if parts[0] == "Circle"
-       r = parts[1]
-       
-    elif parts[0] == "Rectangle"
-        l = parts[1]
-        w = parts[2]
-         
-    elif  parts[0] == "Triangle"
-        b = parts[1]
-        h = parts[2]
-    
-    else
-        print "Error in Read_Parts"
-
-def main():
-
-    file_or()
-    split_readline()
-    read_parts()
-    
-    
-#result = re.match("C", Shape)
-#print(result) 
-#Prints <_sre.SRE_Match object; span=(0, 1), match='c'>
-#    result = re.match("R", Shape) 
-#Prints None since "R" is not at the beginning of our string
-#   print(result)
+for line in lines:
+    values = line.strip().split(',')
+    shape = values[0]
+    if shape == 'Rectangle':
+        rect = Rectangle(int(values[1]), int(values[2]))
+        print('Area of Rectangle: ', rect.getArea())
+    elif shape == 'Circle':
+        circ = Circle(int(values[1]))
+        print('Area of Circle: ', circ.getArea())
+    elif shape == 'Triangle':
+        tri = Triangle(int(values[1]), int(values[2]))
+        print('Area of Triangle is: ', tri.getArea())
+    else:
+        pass 
