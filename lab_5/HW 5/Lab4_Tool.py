@@ -1,5 +1,5 @@
-arcpy.env.workspace = r'lab_4\codes_env'
-folder_path = r'lab_4'
+arcpy.env.workspace = r'Anisha-Vadlamudi-GEOG-676-Assignments\lab_4\codes_env'
+folder_path = r'Anisha-Vadlamudi-GEOG-676-Assignments\lab_4'
 gdb_name = 'Test.gdb'
 gdb_path = folder_path + '\\' + gdb_name
 arcpy.CreateFileGDB_management(folder_path, gdb_name)
