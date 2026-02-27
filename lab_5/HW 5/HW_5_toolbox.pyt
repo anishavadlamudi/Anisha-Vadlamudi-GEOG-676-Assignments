@@ -2,7 +2,6 @@
 
 import arcpy
 
-# self.tools = [Tool] OLD CLASS
 self.tools = [BuildingProximity]
 
 class BuildingProximity(object):
@@ -12,7 +11,6 @@ class BuildingProximity(object):
         self.description = "Determines which buildings on TAMU's campus are near a targeted building"
         self.canRunInBackground = False # Only used in ArcMap
         self.category = "Building Tools"
-
 
 class GarageBuildingIntersection(object):
     def __init__(self):
@@ -71,14 +69,6 @@ class GarageBuildingIntersection(object):
 
     # Code is ESRI's own example found here: http://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/controlling-license-behavior-in-a-python-toolbox.htm
     def isLicensed(self):
-        """Allow the tool to execute, only if the ArcGIS 3D Analyst extension 
-        is available."""
-        try:
-            if arcpy.CheckExtension("3D") != "Available":
-                raise Exception
-        except Exception:
-            return False  # tool cannot be executed
-
         return True  # tool can be executed
 
     # Code is ESRI's own example found here: http://pro.arcgis.com/en/pro-app/arcpy/geoprocessing_and_python/customizing-tool-behavior-in-a-python-toolbox.htm
@@ -104,7 +94,7 @@ class GarageBuildingIntersection(object):
 
     def execute(self, parameters, messages):
         """The source code of the tool."""
-        campus = r"D:/DevSource/Tamu/GeoInnovation/_GISProgramming/data/modules/17/Campus.gdb"
+        campus = r"Anisha-Vadlamudi-GEOG-676-Assignments\lab_4\Campus.gdb"
 
         # Setup our user input variables
         buildingNumber_input = parameters[0].valueAsText
