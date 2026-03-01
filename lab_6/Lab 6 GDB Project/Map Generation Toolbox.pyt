@@ -27,35 +27,35 @@ class GraduatedColorsRenderer(object):
 
         # Parameter 0: Input ArcGIS Pro Project Name
         param0 = arcpy.parameter(
-        displayName = "Input ArcGIS Pro Project Name",
-        name = "aprxInputName",
-        datatype = "DEFile",
-        parameterType = "Required",
-        direction = "Input"
+            displayName = "Input ArcGIS Pro Project Name",
+            name = "aprxInputName",
+            datatype = "DEFile",
+            parameterType = "Required",
+            direction = "Input"
         )
         # Parameter 1: which layer you want to classify to create a color map
         param1 = arcpy.Parameter(
-        displayName = "Layer to Classify",
-        name = "LayertoClassify",
-        datatype = "GPLayer",
-        parameterType = "Required",
-        direction = "Input"
+            displayName = "Layer to Classify",
+            name = "LayertoClassify",
+            datatype = "GPLayer",
+            parameterType = "Required",
+            direction = "Input"
         )
         # Parameter 2: Output Folder Location
         param2 = arcpy.Parameter(
-        displayName="Output Location",
-        name="OutputLocation",
-        datatype="DEFolder",
-        parameterType="Required",
-        direction="Input"
+            displayName="Output Location",
+            name="OutputLocation",
+            datatype="DEFolder",
+            parameterType="Required",
+            direction="Input"
         )
         # Parameter 3: Output Project Name
         param3 = arcpy.Parameter(
-        displayName ="Output Project Name",
-        name = "OutputProjectName",
-        datatype ="GPString",
-        parameterType ="Required",
-        direction ="Input"
+            displayName ="Output Project Name",
+            name = "OutputProjectName",
+            datatype ="GPString",
+            parameterType ="Required",
+            direction ="Input"
         )
         params = [param0, param1, param2, param3]
         return params
