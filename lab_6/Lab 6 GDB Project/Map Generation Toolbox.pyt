@@ -26,7 +26,7 @@ class GraduatedColorsRenderer(object):
         #parameter definitions
 
         # Parameter 0: Input ArcGIS Pro Project Name
-        param0 = arcpy.parameter(
+        param0 = arcpy.Parameter(
             displayName = "Input ArcGIS Pro Project Name",
             name = "aprxInputName",
             datatype = "DEFile",
