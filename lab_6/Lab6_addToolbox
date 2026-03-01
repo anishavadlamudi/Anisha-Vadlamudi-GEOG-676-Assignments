@@ -1,0 +1,49 @@
+def getParameters(self)
+
+param0 =arcpy.parameter(
+displayName = "Input ArcGIS Pro Project Name",
+name="aprxInputName",
+datatype="DEFile",
+parameterType="Required",
+direction="Input"
+)
+
+param1 = arcpy.Parameter(
+displayName="Layer to Classify",
+datatype="GPLayer",
+parameteraType="Required",
+direction="Input"
+)
+param2 = arcpy.Parameter(
+displayName="OutputLocation",
+name="OutputLocation",
+datatype="DEFolder",
+direction="Input"
+)
+param3 = arcpy.Parameter(
+displayName="Output Project Name",
+datatype="GPString",
+parameterType="Required",
+direction="Input"
+)
+params = [param0, param1, param2, param3]
+return params
+
+def isLicensed(self):
+"""Set whether tool is licensed to execute."""
+return True
+
+def updateParameters(self, parameters):
+"""Modify the values and properties of parameters before interna
+validation is performed. This method is called whenever a parameter
+has been changed."""
+return
+
+def execute(self, parameters, messages):
+"""The source code of the tool"""
+readTime = 3
+start = 0
+max = 100
+step = 33
+
+arcpy.SetProgressor("step, "Validating Project File...", start, max, step)
