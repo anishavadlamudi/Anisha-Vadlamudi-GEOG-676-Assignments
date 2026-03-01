@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?><messages><msg code="0" type="2">Start Time: Sunday, March 1, 2026 1:54:16 AM</msg><msg code="1" type="100">Traceback (most recent call last):
+﻿  File "C:\Users\Anish\Documents\Grad School\GIS Cert\GIS Programming\Anisha-Vadlamudi-GEOG-676-Assignments\lab_6\Lab 6 GDB Project\Map Generation Toolbox.pyt", line 88, in execute
+    time.sleep(readTime) #pause for users to read the progress message
+    ^^^^
+﻿NameError: name 'time' is not defined. Did you forget to import 'time'?
+﻿</msg><msg code="-2147467259" type="100">Failed to execute (GraduatedColorsRenderer).</msg><msg code="0" type="3">Failed at Sunday, March 1, 2026 1:54:17 AM (Elapsed Time: 0.85 seconds)</msg></messages>
